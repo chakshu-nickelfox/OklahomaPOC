@@ -111,7 +111,6 @@
 				9F1422F12B32DA2600ECAC40 /* AppDelegate.swift */,
 				9F1422F32B32DA2600ECAC40 /* SceneDelegate.swift */,
 				9F1422F52B32DA2600ECAC40 /* ViewController.swift */,
-				9FF805882B3410270094FECA /* IAPViewController.swift */,
 				9F14231D2B32E3D800ECAC40 /* ViewModel.swift */,
 				9F1422F72B32DA2700ECAC40 /* Main.storyboard */,
 				9F1422FD2B32DA2800ECAC40 /* Assets.xcassets */,
@@ -166,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				9FF805842B3408A60094FECA /* IAPManager.swift */,
+				9FF805882B3410270094FECA /* IAPViewController.swift */,
 			);
 			path = "IAP+Helper";
 			sourceTree = "<group>";

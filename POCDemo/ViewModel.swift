@@ -36,13 +36,8 @@ class ViewModel {
                     let chapter = Chapters(context: CoreDataManager.shared.context)
                     chapter.chapterID = chapterData.chapterId
                     chapter.chapterName = chapterData.chapterName
-                    
-                    self.chapterData.append(chapterData)
                 }
-                self.view.reloadData()
                 CoreDataManager.shared.saveContext()
-                
-                print(self.chapterData)
                 
             } catch {
                 print("Error: \(error.localizedDescription)")
@@ -53,11 +48,12 @@ class ViewModel {
     }
     
     func loadChaptersUsingCoreData() {
-        self.setupChapterModelsUsingCoreData()
-        print(self.chapterData)
+        self.chapterData = []
+        self.fetchChapters()
     }
     
     private func fetchChapters() {
+        self.chapterData = []
         do {
             let chaptersFromCoreData = try CoreDataManager.shared.context.fetch(Chapters.fetchRequest())
             
@@ -67,7 +63,6 @@ class ViewModel {
             for chapter in chapters {
                 let chapterData = ChapterData(chapterId: chapter.chapterID ?? "", chapterName: chapter.chapterName ?? "")
                 self.chapterData.append(chapterData)
-                print(chapter.chapterName ?? "")
             }
         } catch {
             debugPrint("Error")
@@ -85,10 +80,6 @@ class ViewModel {
                 let decoder = JSONDecoder()
                 let chapters = try decoder.decode([ChapterList].self, from: jsonData)
                 
-                // Append chapters to chapterList
-                self.chapterList.append(contentsOf: chapters)
-                self.view.reloadData()
-                
                 // Persist data to Realm
                 let realm = RealmManager.realm
                 try realm.write {
@@ -102,9 +93,14 @@ class ViewModel {
         }
     }
     
+    func fetchChaptersRealm() {
+        self.chapterList = []
+        self.chapterList = RealmManager.getAllChapters()
+        self.view.reloadData()
+    }
+    
     func loadChaptersUsingRealm() {
-        self.setupModelsUsingRealm()
-        print(self.chapterList)
+        self.fetchChaptersRealm()
     }
 }
 

@@ -25,8 +25,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.setupViewModel()
         self.setupTableView()
-                self.viewModel.loadChaptersUsingRealm()
-//        self.viewModel.loadChaptersUsingCoreData()
+        self.viewModel.loadChaptersUsingRealm()
     }
     
     private func setupViewModel() {

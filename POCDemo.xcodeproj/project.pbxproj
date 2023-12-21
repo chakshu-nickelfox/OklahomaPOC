@@ -25,6 +25,10 @@
 		9F14231E2B32E3D800ECAC40 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F14231D2B32E3D800ECAC40 /* ViewModel.swift */; };
 		9F97DBBE2B32F8BD0034171E /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F97DBBD2B32F8BD0034171E /* RealmManager.swift */; };
 		9F97DBC02B32F8CB0034171E /* ChapterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F97DBBF2B32F8CB0034171E /* ChapterList.swift */; };
+		9FF805852B3408A60094FECA /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF805842B3408A60094FECA /* IAPManager.swift */; };
+		9FF805872B3409870094FECA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF805862B3409870094FECA /* StoreKit.framework */; };
+		9FF805892B3410280094FECA /* IAPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF805882B3410270094FECA /* IAPViewController.swift */; };
+		9FF8058C2B3420440094FECA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF8058B2B3420440094FECA /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +54,11 @@
 		9F14231D2B32E3D800ECAC40 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		9F97DBBD2B32F8BD0034171E /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		9F97DBBF2B32F8CB0034171E /* ChapterList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterList.swift; sourceTree = "<group>"; };
+		9FF805842B3408A60094FECA /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
+		9FF805862B3409870094FECA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		9FF805882B3410270094FECA /* IAPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPViewController.swift; sourceTree = "<group>"; };
+		9FF8058A2B3416EF0094FECA /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
+		9FF8058B2B3420440094FECA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +67,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				716D183C6D1C7FC407049E3A /* Pods_POCDemo.framework in Frameworks */,
+				9FF805872B3409870094FECA /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +86,8 @@
 		9F1422E52B32DA2600ECAC40 = {
 			isa = PBXGroup;
 			children = (
+				9FF8058A2B3416EF0094FECA /* Configuration.storekit */,
+				9FF805832B3408960094FECA /* IAP+Helper */,
 				9F97DBBC2B32F8A80034171E /* Realm+Helper */,
 				9F14230E2B32DD2700ECAC40 /* CoreData */,
 				9F1422F02B32DA2600ECAC40 /* POCDemo */,
@@ -99,6 +111,7 @@
 				9F1422F12B32DA2600ECAC40 /* AppDelegate.swift */,
 				9F1422F32B32DA2600ECAC40 /* SceneDelegate.swift */,
 				9F1422F52B32DA2600ECAC40 /* ViewController.swift */,
+				9FF805882B3410270094FECA /* IAPViewController.swift */,
 				9F14231D2B32E3D800ECAC40 /* ViewModel.swift */,
 				9F1422F72B32DA2700ECAC40 /* Main.storyboard */,
 				9F1422FD2B32DA2800ECAC40 /* Assets.xcassets */,
@@ -106,6 +119,7 @@
 				9F1423022B32DA2800ECAC40 /* Info.plist */,
 				9F1422FA2B32DA2700ECAC40 /* POCDemo.xcdatamodeld */,
 				9F1423082B32DA8900ECAC40 /* CoreDataManager.swift */,
+				9FF8058B2B3420440094FECA /* HomeViewController.swift */,
 			);
 			path = POCDemo;
 			sourceTree = "<group>";
@@ -148,9 +162,18 @@
 			path = "Realm+Helper";
 			sourceTree = "<group>";
 		};
+		9FF805832B3408960094FECA /* IAP+Helper */ = {
+			isa = PBXGroup;
+			children = (
+				9FF805842B3408A60094FECA /* IAPManager.swift */,
+			);
+			path = "IAP+Helper";
+			sourceTree = "<group>";
+		};
 		BDE902D31C09E540C8033E5F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9FF805862B3409870094FECA /* StoreKit.framework */,
 				5F988E1F538D07D575684C09 /* Pods_POCDemo.framework */,
 			);
 			name = Frameworks;
@@ -274,6 +297,7 @@
 			files = (
 				9F1422F62B32DA2600ECAC40 /* ViewController.swift in Sources */,
 				9F14230C2B32DD1300ECAC40 /* Employee+CoreDataClass.swift in Sources */,
+				9FF805892B3410280094FECA /* IAPViewController.swift in Sources */,
 				9F1422F22B32DA2600ECAC40 /* AppDelegate.swift in Sources */,
 				9F14231E2B32E3D800ECAC40 /* ViewModel.swift in Sources */,
 				9F14231C2B32E3C000ECAC40 /* Chapters+CoreDataProperties.swift in Sources */,
@@ -281,6 +305,8 @@
 				9F1422F42B32DA2600ECAC40 /* SceneDelegate.swift in Sources */,
 				9F1423092B32DA8900ECAC40 /* CoreDataManager.swift in Sources */,
 				9F1422FC2B32DA2700ECAC40 /* POCDemo.xcdatamodeld in Sources */,
+				9FF805852B3408A60094FECA /* IAPManager.swift in Sources */,
+				9FF8058C2B3420440094FECA /* HomeViewController.swift in Sources */,
 				9F14231B2B32E3C000ECAC40 /* Chapters+CoreDataClass.swift in Sources */,
 				9F14230D2B32DD1300ECAC40 /* Employee+CoreDataProperties.swift in Sources */,
 				9F1423182B32E38200ECAC40 /* ChapterData.swift in Sources */,
@@ -437,7 +463,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3MZWWA2DK5;
+				DEVELOPMENT_TEAM = 2P7R4H9ZM8;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = POCDemo/Info.plist;
@@ -467,7 +493,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3MZWWA2DK5;
+				DEVELOPMENT_TEAM = 2P7R4H9ZM8;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = POCDemo/Info.plist;

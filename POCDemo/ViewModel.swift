@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ViewModelProtocol: AnyObject {
-    
+    func reloadData()
 }
 
 class ViewModel {
@@ -39,6 +39,7 @@ class ViewModel {
                     
                     self.chapterData.append(chapterData)
                 }
+                self.view.reloadData()
                 CoreDataManager.shared.saveContext()
                 
                 print(self.chapterData)
@@ -86,6 +87,7 @@ class ViewModel {
                 
                 // Append chapters to chapterList
                 self.chapterList.append(contentsOf: chapters)
+                self.view.reloadData()
                 
                 // Persist data to Realm
                 let realm = RealmManager.realm
